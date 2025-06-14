@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <math.h>
+#include <string.h>
 #include <windows.h>
 #include <mmsystem.h>
 #pragma comment(lib, "winmm.lib")
@@ -11,10 +12,11 @@
 #define GRID_ROWS 8        // Number of notes
 #define CELL_SIZE 30       // Pixel size of each grid cell
 #define TIMELINE_HEIGHT 40 // Height of timeline in pixels
+#define MENU_HEIGHT 30     // Height of instrument menu
 
 // Window dimensions
 const unsigned int SCR_WIDTH = GRID_COLS * CELL_SIZE + 200; // Extra space for labels
-const unsigned int SCR_HEIGHT = GRID_ROWS * CELL_SIZE + TIMELINE_HEIGHT + 60;
+const unsigned int SCR_HEIGHT = GRID_ROWS * CELL_SIZE + TIMELINE_HEIGHT + MENU_HEIGHT + 60;
 
 // Note names and frequencies
 const char *NOTE_NAMES[GRID_ROWS] = {
@@ -43,26 +45,54 @@ const float NOTE_COLORS[GRID_ROWS][3] = {
     {1.0f, 0.0f, 0.0f}  // C4 - Red
 };
 
+// Instruments
+typedef enum
+{
+    PIANO,
+    SYNTH,
+    BELL,
+    NUM_INSTRUMENTS
+} Instrument;
+
+const char *INSTRUMENT_NAMES[NUM_INSTRUMENTS] = {
+    "Piano",
+    "Synth",
+    "Bell"};
+
+// Note cell structure
+typedef struct
+{
+    bool active;
+    Instrument instrument;
+} NoteCell;
+
 // Grid state
 typedef struct
 {
-    bool cells[GRID_ROWS][GRID_COLS];
+    NoteCell cells[GRID_ROWS][GRID_COLS];
     int currentPlayColumn;
     bool isPlaying;
     float startTime;
     float tempo; // Beats per minute
+    Instrument currentInstrument;
+    bool showInstrumentMenu;
+    int menuHoverItem;
 } State;
 
 State state = {
     .currentPlayColumn = -1,
     .isPlaying = false,
     .startTime = 0.0f,
-    .tempo = 120.0f};
+    .tempo = 120.0f,
+    .currentInstrument = PIANO,
+    .showInstrumentMenu = false,
+    .menuHoverItem = -1};
 
-void playNoteSound(int row)
+void playNoteSound(int row, Instrument instrument)
 {
     char filename[256];
-    snprintf(filename, sizeof(filename), "sounds\\%s.wav", NOTE_NAMES[row]);
+    snprintf(filename, sizeof(filename), "sounds\\%s\\%s.wav",
+             INSTRUMENT_NAMES[instrument], NOTE_NAMES[row]);
     PlaySound(filename, NULL, SND_FILENAME | SND_ASYNC);
 }
 
@@ -73,9 +103,9 @@ void playCurrentColumn()
         // Play all active notes in current column
         for (int row = 0; row < GRID_ROWS; row++)
         {
-            if (state.cells[row][state.currentPlayColumn])
+            if (state.cells[row][state.currentPlayColumn].active)
             {
-                playNoteSound(row);
+                playNoteSound(row, state.cells[row][state.currentPlayColumn].instrument);
             }
         }
     }
@@ -98,10 +128,56 @@ void drawText(const char *text, float x, float y, float scale)
     glEnd();
 }
 
+void drawInstrumentMenu()
+{
+    float menuX = 10.0f;
+    float menuY = MENU_HEIGHT;
+    float menuWidth = 100.0f;
+    float itemHeight = 25.0f;
+
+    // Draw current instrument
+    char currentInst[64];
+    snprintf(currentInst, sizeof(currentInst), "Instrument: %s",
+             INSTRUMENT_NAMES[state.currentInstrument]);
+    drawText(currentInst, menuX, menuY - 20, 1.0f);
+
+    if (state.showInstrumentMenu)
+    {
+        // Draw menu background
+        glColor3f(0.2f, 0.2f, 0.2f);
+        glBegin(GL_QUADS);
+        glVertex2f(menuX, menuY);
+        glVertex2f(menuX + menuWidth, menuY);
+        glVertex2f(menuX + menuWidth, menuY + itemHeight * NUM_INSTRUMENTS);
+        glVertex2f(menuX, menuY + itemHeight * NUM_INSTRUMENTS);
+        glEnd();
+
+        // Draw menu items
+        for (int i = 0; i < NUM_INSTRUMENTS; i++)
+        {
+            float itemY = menuY + i * itemHeight;
+
+            // Highlight if hovered
+            if (i == state.menuHoverItem)
+            {
+                glColor3f(0.4f, 0.4f, 0.4f);
+                glBegin(GL_QUADS);
+                glVertex2f(menuX, itemY);
+                glVertex2f(menuX + menuWidth, itemY);
+                glVertex2f(menuX + menuWidth, itemY + itemHeight);
+                glVertex2f(menuX, itemY + itemHeight);
+                glEnd();
+            }
+
+            drawText(INSTRUMENT_NAMES[i], menuX + 5, itemY + itemHeight / 2, 1.0f);
+        }
+    }
+}
+
 void drawGrid()
 {
-    float gridStartX = 100.0f; // Space for labels
-    float gridStartY = 50.0f;  // Space for timeline
+    float gridStartX = 100.0f;              // Space for labels
+    float gridStartY = 50.0f + MENU_HEIGHT; // Space for timeline and menu
 
     // Draw note labels
     for (int row = 0; row < GRID_ROWS; row++)
@@ -117,7 +193,7 @@ void drawGrid()
         { // Draw number every 4 beats
             char number[4];
             sprintf(number, "%d", col + 1);
-            drawText(number, gridStartX + col * CELL_SIZE, 20.0f, 1.0f);
+            drawText(number, gridStartX + col * CELL_SIZE, 20.0f + MENU_HEIGHT, 1.0f);
         }
     }
 
@@ -156,21 +232,80 @@ void drawGrid()
     {
         for (int col = 0; col < GRID_COLS; col++)
         {
-            if (state.cells[row][col])
+            if (state.cells[row][col].active)
             {
                 float x = gridStartX + col * CELL_SIZE;
                 float y = gridStartY + row * CELL_SIZE;
 
-                glColor3f(NOTE_COLORS[row][0],
-                          NOTE_COLORS[row][1],
-                          NOTE_COLORS[row][2]);
+                // Base color from note
+                float r = NOTE_COLORS[row][0];
+                float g = NOTE_COLORS[row][1];
+                float b = NOTE_COLORS[row][2];
 
+                // Modify color based on instrument
+                switch (state.cells[row][col].instrument)
+                {
+                case PIANO:
+                    // Keep original colors
+                    break;
+                case SYNTH:
+                    // Make more neon
+                    r = (r + 0.5f) * 0.8f;
+                    g = (g + 0.5f) * 0.8f;
+                    b = (b + 0.8f) * 0.8f;
+                    break;
+                case BELL:
+                    // Make more metallic
+                    r = (r + 0.7f) * 0.7f;
+                    g = (g + 0.7f) * 0.7f;
+                    b = (b + 0.7f) * 0.7f;
+                    break;
+                }
+
+                glColor3f(r, g, b);
                 glBegin(GL_QUADS);
                 glVertex2f(x + 2, y + 2);
                 glVertex2f(x + CELL_SIZE - 2, y + 2);
                 glVertex2f(x + CELL_SIZE - 2, y + CELL_SIZE - 2);
                 glVertex2f(x + 2, y + CELL_SIZE - 2);
                 glEnd();
+
+                // Draw a small indicator for the instrument
+                float indicatorSize = 6.0f;
+                glColor3f(1.0f, 1.0f, 1.0f);
+                switch (state.cells[row][col].instrument)
+                {
+                case PIANO:
+                    // Draw a small rectangle
+                    glBegin(GL_LINE_LOOP);
+                    glVertex2f(x + 4, y + 4);
+                    glVertex2f(x + 4 + indicatorSize, y + 4);
+                    glVertex2f(x + 4 + indicatorSize, y + 4 + indicatorSize);
+                    glVertex2f(x + 4, y + 4 + indicatorSize);
+                    glEnd();
+                    break;
+                case SYNTH:
+                    // Draw a triangle
+                    glBegin(GL_LINE_LOOP);
+                    glVertex2f(x + 4, y + 4 + indicatorSize);
+                    glVertex2f(x + 4 + indicatorSize / 2, y + 4);
+                    glVertex2f(x + 4 + indicatorSize, y + 4 + indicatorSize);
+                    glEnd();
+                    break;
+                case BELL:
+                    // Draw a circle
+                    const int segments = 8;
+                    glBegin(GL_LINE_LOOP);
+                    for (int i = 0; i < segments; i++)
+                    {
+                        float angle = 2.0f * 3.1415926f * i / segments;
+                        float cx = x + 4 + indicatorSize / 2 + cosf(angle) * indicatorSize / 2;
+                        float cy = y + 4 + indicatorSize / 2 + sinf(angle) * indicatorSize / 2;
+                        glVertex2f(cx, cy);
+                    }
+                    glEnd();
+                    break;
+                }
             }
         }
     }
@@ -189,14 +324,31 @@ void drawGrid()
 
 void mouse_button_callback(GLFWwindow *window, int button, int action, int mods)
 {
-    if (button == GLFW_MOUSE_BUTTON_LEFT && (action == GLFW_PRESS || action == GLFW_REPEAT))
+    if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS)
     {
         double xpos, ypos;
         glfwGetCursorPos(window, &xpos, &ypos);
 
+        // Check if clicking on instrument menu area
+        if (xpos < 110.0f && ypos < MENU_HEIGHT + NUM_INSTRUMENTS * 25.0f)
+        {
+            if (ypos < MENU_HEIGHT)
+            {
+                // Toggle menu
+                state.showInstrumentMenu = !state.showInstrumentMenu;
+            }
+            else if (state.showInstrumentMenu && state.menuHoverItem >= 0)
+            {
+                // Select instrument
+                state.currentInstrument = state.menuHoverItem;
+                state.showInstrumentMenu = false;
+            }
+            return;
+        }
+
         // Convert mouse coordinates to grid coordinates
         float gridStartX = 100.0f;
-        float gridStartY = 50.0f;
+        float gridStartY = 50.0f + MENU_HEIGHT;
 
         int col = (int)((xpos - gridStartX) / CELL_SIZE);
         int row = (int)((ypos - gridStartY) / CELL_SIZE);
@@ -204,13 +356,30 @@ void mouse_button_callback(GLFWwindow *window, int button, int action, int mods)
         if (row >= 0 && row < GRID_ROWS && col >= 0 && col < GRID_COLS)
         {
             // Toggle cell state
-            state.cells[row][col] = !state.cells[row][col];
+            state.cells[row][col].active = !state.cells[row][col].active;
 
-            // If toggled on, play the note
-            if (state.cells[row][col])
+            // If toggled on, set instrument and play the note
+            if (state.cells[row][col].active)
             {
-                playNoteSound(row);
+                state.cells[row][col].instrument = state.currentInstrument;
+                playNoteSound(row, state.currentInstrument);
             }
+        }
+    }
+}
+
+void cursor_position_callback(GLFWwindow *window, double xpos, double ypos)
+{
+    if (state.showInstrumentMenu)
+    {
+        // Update menu hover state
+        if (xpos < 110.0f && ypos >= MENU_HEIGHT && ypos < MENU_HEIGHT + NUM_INSTRUMENTS * 25.0f)
+        {
+            state.menuHoverItem = (int)((ypos - MENU_HEIGHT) / 25.0f);
+        }
+        else
+        {
+            state.menuHoverItem = -1;
         }
     }
 }
@@ -245,6 +414,16 @@ void key_callback(GLFWwindow *window, int key, int scancode, int action, int mod
     {
         state.tempo = fmax(state.tempo - 5.0f, 60.0f);
         printf("Tempo: %.1f BPM\n", state.tempo);
+    }
+    // Instrument selection with number keys
+    else if (key >= GLFW_KEY_1 && key <= GLFW_KEY_3 && action == GLFW_PRESS)
+    {
+        int instrument = key - GLFW_KEY_1;
+        if (instrument < NUM_INSTRUMENTS)
+        {
+            state.currentInstrument = instrument;
+            printf("Selected instrument: %s\n", INSTRUMENT_NAMES[instrument]);
+        }
     }
 }
 
@@ -285,12 +464,14 @@ int main(void)
     glfwMakeContextCurrent(window);
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
     glfwSetMouseButtonCallback(window, mouse_button_callback);
+    glfwSetCursorPosCallback(window, cursor_position_callback);
     glfwSetKeyCallback(window, key_callback);
 
     printf("Controls:\n");
     printf("- Click grid cells to toggle notes\n");
     printf("- Space: Play/Pause\n");
     printf("- Up/Down: Adjust tempo\n");
+    printf("- Click 'Instrument' or press 1-3: Change instrument\n");
     printf("- ESC: Quit\n");
 
     // Main loop
@@ -309,6 +490,7 @@ int main(void)
         glLoadIdentity();
 
         updatePlayback();
+        drawInstrumentMenu();
         drawGrid();
 
         glfwSwapBuffers(window);
