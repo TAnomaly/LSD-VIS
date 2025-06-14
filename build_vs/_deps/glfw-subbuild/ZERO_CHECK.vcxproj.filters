@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Tmira\Desktop\LSD-Vis\build_vs\_deps\glfw-subbuild\CMakeFiles\fb54b29230556333b228638db9cbaab4\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{3D4370F8-3287-3718-85C2-CCEF1B3FDD4A}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Tmira\Desktop\LSD-Vis\build\_deps\glfw-src\examples\boing.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Tmira\Desktop\LSD-Vis\build\_deps\glfw-src\deps\glad_gl.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Tmira\Desktop\LSD-Vis\build\_deps\glfw-src\deps\glad\gl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Tmira\Desktop\LSD-Vis\build\_deps\glfw-src\examples\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="C:\Users\Tmira\Desktop\LSD-Vis\build\_deps\glfw-src\examples\glfw.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{54971E2D-6714-3D2A-BF16-AAE5FDAD8FA3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{CA332C31-DE47-301C-9AE4-09E0BB526FE1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Tmira\Desktop\LSD-Vis\build_vs\CMakeFiles\eed95c45668b5a1e8daa55a244f67af3\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{1FE1F283-0920-39E7-853C-0B536AAB5D6D}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

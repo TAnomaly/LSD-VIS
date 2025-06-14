@@ -1,0 +1,10 @@
+^C:\USERS\TMIRA\DESKTOP\LSD-VIS\BUILD\_DEPS\GLFW-SUBBUILD\CMAKEFILES\4074B09F3447E8FDF8D5B3F350213A62\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Tmira/Desktop/LSD-Vis/build/_deps/glfw-subbuild -BC:/Users/Tmira/Desktop/LSD-Vis/build/_deps/glfw-subbuild --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/Tmira/Desktop/LSD-Vis/build/_deps/glfw-subbuild/glfw-populate.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

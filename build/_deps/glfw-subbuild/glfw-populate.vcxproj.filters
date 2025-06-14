@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Tmira\Desktop\LSD-Vis\build\_deps\glfw-subbuild\CMakeFiles\4ce4d3c1b3cee9f65efa2e5aa3df7c43\glfw-populate-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Tmira\Desktop\LSD-Vis\build\_deps\glfw-subbuild\CMakeFiles\4ce4d3c1b3cee9f65efa2e5aa3df7c43\glfw-populate-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Tmira\Desktop\LSD-Vis\build\_deps\glfw-subbuild\CMakeFiles\4ce4d3c1b3cee9f65efa2e5aa3df7c43\glfw-populate-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Tmira\Desktop\LSD-Vis\build\_deps\glfw-subbuild\CMakeFiles\4ce4d3c1b3cee9f65efa2e5aa3df7c43\glfw-populate-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Tmira\Desktop\LSD-Vis\build\_deps\glfw-subbuild\CMakeFiles\4ce4d3c1b3cee9f65efa2e5aa3df7c43\glfw-populate-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Tmira\Desktop\LSD-Vis\build\_deps\glfw-subbuild\CMakeFiles\4ce4d3c1b3cee9f65efa2e5aa3df7c43\glfw-populate-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Tmira\Desktop\LSD-Vis\build\_deps\glfw-subbuild\CMakeFiles\4ce4d3c1b3cee9f65efa2e5aa3df7c43\glfw-populate-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Tmira\Desktop\LSD-Vis\build\_deps\glfw-subbuild\CMakeFiles\4ce4d3c1b3cee9f65efa2e5aa3df7c43\glfw-populate-test.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Tmira\Desktop\LSD-Vis\build\_deps\glfw-subbuild\CMakeFiles\6de1679bb3c1368c782536ec8bc0feeb\glfw-populate-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Tmira\Desktop\LSD-Vis\build\_deps\glfw-subbuild\CMakeFiles\4074b09f3447e8fdf8d5b3f350213a62\glfw-populate.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Tmira\Desktop\LSD-Vis\build\_deps\glfw-subbuild\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\Tmira\Desktop\LSD-Vis\build\_deps\glfw-subbuild\CMakeFiles\glfw-populate" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{086FD98C-9FFE-36F2-8C1F-8D20A7BEC584}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

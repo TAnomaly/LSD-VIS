@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ResolveNugetPackages>false</ResolveNugetPackages>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{13CB285B-F606-3EA7-88D1-3588B47289EC}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Tmira\Desktop\LSD-Vis\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/Tmira/Desktop/LSD-Vis/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Tmira/Desktop/LSD-Vis -BC:/Users/Tmira/Desktop/LSD-Vis/build_vs --check-stamp-file C:/Users/Tmira/Desktop/LSD-Vis/build_vs/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\shared_internal_commands.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FetchContent.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FetchContent\CMakeLists.cmake.in;C:\Program Files\CMake\share\cmake-4.0\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Linker\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Linker\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\WindowsPaths.cmake;C:\Users\Tmira\Desktop\LSD-Vis\build_vs\CMakeFiles\4.0.0\CMakeCCompiler.cmake;C:\Users\Tmira\Desktop\LSD-Vis\build_vs\CMakeFiles\4.0.0\CMakeRCCompiler.cmake;C:\Users\Tmira\Desktop\LSD-Vis\build_vs\CMakeFiles\4.0.0\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Tmira\Desktop\LSD-Vis\build_vs\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/Tmira/Desktop/LSD-Vis/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Tmira/Desktop/LSD-Vis -BC:/Users/Tmira/Desktop/LSD-Vis/build_vs --check-stamp-file C:/Users/Tmira/Desktop/LSD-Vis/build_vs/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\shared_internal_commands.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FetchContent.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FetchContent\CMakeLists.cmake.in;C:\Program Files\CMake\share\cmake-4.0\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Linker\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Linker\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\WindowsPaths.cmake;C:\Users\Tmira\Desktop\LSD-Vis\build_vs\CMakeFiles\4.0.0\CMakeCCompiler.cmake;C:\Users\Tmira\Desktop\LSD-Vis\build_vs\CMakeFiles\4.0.0\CMakeRCCompiler.cmake;C:\Users\Tmira\Desktop\LSD-Vis\build_vs\CMakeFiles\4.0.0\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Tmira\Desktop\LSD-Vis\build_vs\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/Tmira/Desktop/LSD-Vis/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Tmira/Desktop/LSD-Vis -BC:/Users/Tmira/Desktop/LSD-Vis/build_vs --check-stamp-file C:/Users/Tmira/Desktop/LSD-Vis/build_vs/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\shared_internal_commands.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FetchContent.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FetchContent\CMakeLists.cmake.in;C:\Program Files\CMake\share\cmake-4.0\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Linker\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Linker\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\WindowsPaths.cmake;C:\Users\Tmira\Desktop\LSD-Vis\build_vs\CMakeFiles\4.0.0\CMakeCCompiler.cmake;C:\Users\Tmira\Desktop\LSD-Vis\build_vs\CMakeFiles\4.0.0\CMakeRCCompiler.cmake;C:\Users\Tmira\Desktop\LSD-Vis\build_vs\CMakeFiles\4.0.0\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Tmira\Desktop\LSD-Vis\build_vs\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/Tmira/Desktop/LSD-Vis/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Tmira/Desktop/LSD-Vis -BC:/Users/Tmira/Desktop/LSD-Vis/build_vs --check-stamp-file C:/Users/Tmira/Desktop/LSD-Vis/build_vs/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\shared_internal_commands.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FetchContent.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FetchContent\CMakeLists.cmake.in;C:\Program Files\CMake\share\cmake-4.0\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Linker\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Linker\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\WindowsPaths.cmake;C:\Users\Tmira\Desktop\LSD-Vis\build_vs\CMakeFiles\4.0.0\CMakeCCompiler.cmake;C:\Users\Tmira\Desktop\LSD-Vis\build_vs\CMakeFiles\4.0.0\CMakeRCCompiler.cmake;C:\Users\Tmira\Desktop\LSD-Vis\build_vs\CMakeFiles\4.0.0\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Tmira\Desktop\LSD-Vis\build_vs\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\Tmira\Desktop\LSD-Vis\build_vs\ZERO_CHECK.vcxproj">
+      <Project>{EB76A500-5936-37B5-9ECC-3B46D6AA75F3}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tmira\Desktop\LSD-Vis\build_vs\_deps\glfw-build\examples\boing.vcxproj">
+      <Project>{B06CD6C0-0FB0-3550-9A9C-A3AA205145AC}</Project>
+      <Name>boing</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tmira\Desktop\LSD-Vis\build_vs\_deps\glfw-build\tests\clipboard.vcxproj">
+      <Project>{2708CC74-C178-307E-8DBD-C3D4748CBD17}</Project>
+      <Name>clipboard</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tmira\Desktop\LSD-Vis\build_vs\_deps\glfw-build\tests\cursor.vcxproj">
+      <Project>{6BDC2D3E-D993-3917-9121-CA5DB0E65FC9}</Project>
+      <Name>cursor</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tmira\Desktop\LSD-Vis\build_vs\_deps\glfw-build\tests\empty.vcxproj">
+      <Project>{29ED80EE-1123-3289-9C53-30895120196A}</Project>
+      <Name>empty</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tmira\Desktop\LSD-Vis\build_vs\_deps\glfw-build\tests\events.vcxproj">
+      <Project>{6B05211E-1A78-3E44-8E53-B86BFD1EF4F9}</Project>
+      <Name>events</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tmira\Desktop\LSD-Vis\build_vs\_deps\glfw-build\tests\gamma.vcxproj">
+      <Project>{0B4634D1-2423-3AB0-8C71-01CA15F07F56}</Project>
+      <Name>gamma</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tmira\Desktop\LSD-Vis\build_vs\_deps\glfw-build\examples\gears.vcxproj">
+      <Project>{79A75FCA-E00B-3F6D-ABAB-E78166DA2941}</Project>
+      <Name>gears</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tmira\Desktop\LSD-Vis\build_vs\_deps\glfw-build\src\glfw.vcxproj">
+      <Project>{056B2251-4585-37B6-97EB-163CFA23D958}</Project>
+      <Name>glfw</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tmira\Desktop\LSD-Vis\build_vs\_deps\glfw-build\tests\glfwinfo.vcxproj">
+      <Project>{614F960D-814A-33FF-A013-07CC291190E3}</Project>
+      <Name>glfwinfo</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tmira\Desktop\LSD-Vis\build_vs\_deps\glfw-build\examples\heightmap.vcxproj">
+      <Project>{32E46717-9E0E-3E18-923A-6825284D7836}</Project>
+      <Name>heightmap</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tmira\Desktop\LSD-Vis\build_vs\_deps\glfw-build\tests\icon.vcxproj">
+      <Project>{ABE3771C-D42D-3ACE-B3C9-EF126E051267}</Project>
+      <Name>icon</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tmira\Desktop\LSD-Vis\build_vs\_deps\glfw-build\tests\iconify.vcxproj">
+      <Project>{82EBA333-9F72-3875-A4F1-76C3E367ECBC}</Project>
+      <Name>iconify</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tmira\Desktop\LSD-Vis\build_vs\_deps\glfw-build\tests\inputlag.vcxproj">
+      <Project>{6AE2C79A-98C2-3FD8-BFCA-CB4415042931}</Project>
+      <Name>inputlag</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tmira\Desktop\LSD-Vis\build_vs\_deps\glfw-build\tests\joysticks.vcxproj">
+      <Project>{92BF6C19-6C76-3DB0-87B4-0FF3F151B43D}</Project>
+      <Name>joysticks</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tmira\Desktop\LSD-Vis\build_vs\_deps\glfw-build\tests\monitors.vcxproj">
+      <Project>{64D9BC32-9BBF-3A69-A7DB-B87112AE5FD0}</Project>
+      <Name>monitors</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tmira\Desktop\LSD-Vis\build_vs\_deps\glfw-build\tests\msaa.vcxproj">
+      <Project>{2E4F3B8B-E549-3569-BAE1-5E07AF64C50A}</Project>
+      <Name>msaa</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tmira\Desktop\LSD-Vis\build_vs\music_sequencer.vcxproj">
+      <Project>{E49A36EC-CFD6-36C7-9E91-D1EBFB22100A}</Project>
+      <Name>music_sequencer</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tmira\Desktop\LSD-Vis\build_vs\_deps\glfw-build\examples\offscreen.vcxproj">
+      <Project>{C7EA0C41-A710-320A-90AE-EA56902CBDA7}</Project>
+      <Name>offscreen</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tmira\Desktop\LSD-Vis\build_vs\_deps\glfw-build\tests\opacity.vcxproj">
+      <Project>{FD6139C9-3334-36AF-A901-1D6DDC3EC4F7}</Project>
+      <Name>opacity</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tmira\Desktop\LSD-Vis\build_vs\_deps\glfw-build\examples\particles.vcxproj">
+      <Project>{59359ACC-93DC-3162-9441-7C98584BFA80}</Project>
+      <Name>particles</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tmira\Desktop\LSD-Vis\build_vs\_deps\glfw-build\tests\reopen.vcxproj">
+      <Project>{4BCD0AC7-95DF-3D13-993B-915F80544EE1}</Project>
+      <Name>reopen</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tmira\Desktop\LSD-Vis\build_vs\_deps\glfw-build\examples\sharing.vcxproj">
+      <Project>{F9232803-797D-312B-A8C0-FFFA6F481F6A}</Project>
+      <Name>sharing</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tmira\Desktop\LSD-Vis\build_vs\_deps\glfw-build\examples\simple.vcxproj">
+      <Project>{C36A05D7-CD6A-3C90-A21A-3BD7891DB93A}</Project>
+      <Name>simple</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tmira\Desktop\LSD-Vis\build_vs\_deps\glfw-build\examples\splitview.vcxproj">
+      <Project>{27833A15-0793-3A8F-B810-5F6A41F8885D}</Project>
+      <Name>splitview</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tmira\Desktop\LSD-Vis\build_vs\_deps\glfw-build\tests\tearing.vcxproj">
+      <Project>{47B9901B-B223-3478-B9AD-866513D8A245}</Project>
+      <Name>tearing</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tmira\Desktop\LSD-Vis\build_vs\_deps\glfw-build\tests\threads.vcxproj">
+      <Project>{57FECDB6-E237-385F-8DD9-07281DC11035}</Project>
+      <Name>threads</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tmira\Desktop\LSD-Vis\build_vs\_deps\glfw-build\tests\timeout.vcxproj">
+      <Project>{D07F42A2-EF2D-3C7C-B3A9-504C19F61B68}</Project>
+      <Name>timeout</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tmira\Desktop\LSD-Vis\build_vs\_deps\glfw-build\tests\title.vcxproj">
+      <Project>{71B0E988-ED0E-3643-B582-4414CC9D94BF}</Project>
+      <Name>title</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tmira\Desktop\LSD-Vis\build_vs\_deps\glfw-build\tests\triangle-vulkan.vcxproj">
+      <Project>{84DFF54E-91CA-3D52-816A-A2381B253D9F}</Project>
+      <Name>triangle-vulkan</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tmira\Desktop\LSD-Vis\build_vs\_deps\glfw-build\examples\wave.vcxproj">
+      <Project>{70933D9E-77E9-3BB8-811C-3BEB19EC5EA2}</Project>
+      <Name>wave</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tmira\Desktop\LSD-Vis\build_vs\_deps\glfw-build\tests\windows.vcxproj">
+      <Project>{5C6068EB-82B0-31E1-A60B-FE32FCA2C41D}</Project>
+      <Name>windows</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

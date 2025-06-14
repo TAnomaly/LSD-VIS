@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Tmira\Desktop\LSD-Vis\build\CMakeFiles\f29bb5e22efde4c4b049590a45b522a1\update_mappings.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Tmira\Desktop\LSD-Vis\build\_deps\glfw-src\src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\Tmira\Desktop\LSD-Vis\build\_deps\glfw-src\src\mappings.h.in">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="C:\Users\Tmira\Desktop\LSD-Vis\build\_deps\glfw-src\CMake\GenerateMappings.cmake" />
+    <None Include="C:\Users\Tmira\Desktop\LSD-Vis\build\_deps\glfw-build\src\CMakeFiles\update_mappings" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{B5704966-BC26-31A3-93FE-F64A344BD49D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{54971E2D-6714-3D2A-BF16-AAE5FDAD8FA3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,10 @@
+^C:\USERS\TMIRA\DESKTOP\LSD-VIS\BUILD\_DEPS\GLFW-SRC\TESTS\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Tmira/Desktop/LSD-Vis -BC:/Users/Tmira/Desktop/LSD-Vis/build --check-stamp-file C:/Users/Tmira/Desktop/LSD-Vis/build/_deps/glfw-build/tests/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

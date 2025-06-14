@@ -1,0 +1,14 @@
+# Target labels
+ glfw-populate
+# Source files and their labels
+C:/Users/Tmira/Desktop/LSD-Vis/build_vs/_deps/glfw-subbuild/CMakeFiles/glfw-populate
+C:/Users/Tmira/Desktop/LSD-Vis/build_vs/_deps/glfw-subbuild/CMakeFiles/fb54b29230556333b228638db9cbaab4/glfw-populate.rule
+C:/Users/Tmira/Desktop/LSD-Vis/build_vs/_deps/glfw-subbuild/CMakeFiles/4e208db6c83b6523d06e9ff7e7ca4d75/glfw-populate-complete.rule
+C:/Users/Tmira/Desktop/LSD-Vis/build_vs/_deps/glfw-subbuild/CMakeFiles/fdcf08cc722f7bbb09e094bf4194e8a7/glfw-populate-build.rule
+C:/Users/Tmira/Desktop/LSD-Vis/build_vs/_deps/glfw-subbuild/CMakeFiles/fdcf08cc722f7bbb09e094bf4194e8a7/glfw-populate-configure.rule
+C:/Users/Tmira/Desktop/LSD-Vis/build_vs/_deps/glfw-subbuild/CMakeFiles/fdcf08cc722f7bbb09e094bf4194e8a7/glfw-populate-download.rule
+C:/Users/Tmira/Desktop/LSD-Vis/build_vs/_deps/glfw-subbuild/CMakeFiles/fdcf08cc722f7bbb09e094bf4194e8a7/glfw-populate-install.rule
+C:/Users/Tmira/Desktop/LSD-Vis/build_vs/_deps/glfw-subbuild/CMakeFiles/fdcf08cc722f7bbb09e094bf4194e8a7/glfw-populate-mkdir.rule
+C:/Users/Tmira/Desktop/LSD-Vis/build_vs/_deps/glfw-subbuild/CMakeFiles/fdcf08cc722f7bbb09e094bf4194e8a7/glfw-populate-patch.rule
+C:/Users/Tmira/Desktop/LSD-Vis/build_vs/_deps/glfw-subbuild/CMakeFiles/fdcf08cc722f7bbb09e094bf4194e8a7/glfw-populate-test.rule
+C:/Users/Tmira/Desktop/LSD-Vis/build_vs/_deps/glfw-subbuild/CMakeFiles/fdcf08cc722f7bbb09e094bf4194e8a7/glfw-populate-update.rule
